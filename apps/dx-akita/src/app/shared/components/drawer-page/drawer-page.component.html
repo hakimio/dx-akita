@@ -1,0 +1,43 @@
+<dx-drawer
+    height="100%"
+    position="after"
+    [closeOnOutsideClick]="isMobile"
+    [openedStateMode]="isMobile ? 'overlap' : 'shrink'"
+    revealMode="slide"
+    [shading]="isMobile"
+    [(opened)]="menuOpened"
+>
+    <div
+        *dxTemplate="let data of 'panel'"
+        class="side-panel"
+        [style.width]="drawerWidth + 'px'"
+    >
+        <dx-toolbar
+            class="dxa-toolbar"
+        >
+            <dxi-item
+                location="left"
+                [text]="drawerTitle"
+            ></dxi-item>
+            <dxi-item
+                location="after"
+            >
+                <dx-button
+                    icon="close"
+                    [visible]="isMobile"
+                    (onClick)="menuOpened = false"
+                ></dx-button>
+            </dxi-item>
+        </dx-toolbar>
+
+        <ng-container
+            *ngTemplateOutlet="sidePanelCmp.template"
+        ></ng-container>
+    </div>
+
+    <div class="main-content">
+        <ng-container
+            *ngTemplateOutlet="mainContentCmp.template"
+        ></ng-container>
+    </div>
+</dx-drawer>

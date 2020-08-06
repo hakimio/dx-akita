@@ -1,0 +1,24 @@
+<dx-toolbar
+    class="dxa-toolbar"
+>
+    <dxi-item
+        location="before"
+    >
+        <dx-text-box
+            placeholder="Search..."
+            mode="search"
+            [width]="200"
+            (valueChange)="searchTextChange($event)"
+            valueChangeEvent="keyup"
+        ></dx-text-box>
+    </dxi-item>
+    <dxi-item
+        location="after"
+    >
+        <dx-button
+            icon="menu"
+            class="menu-button"
+            (onClick)="menuBtnClick.emit()"
+        ></dx-button>
+    </dxi-item>
+</dx-toolbar>

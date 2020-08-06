@@ -1,0 +1,119 @@
+<dx-data-grid
+    [dataSource]="ticketDS"
+    [focusedRowEnabled]="true"
+    [focusedRowIndex]="0"
+    [hoverStateEnabled]="true"
+    [repaintChangesOnly]="true"
+    [highlightChanges]="true"
+    [autoNavigateToFocusedRow]="false"
+    [remoteOperations]="true"
+    height="100%"
+    *ngIf="users$ | async as users"
+    (onFocusedRowChanged)="onFocusedRowChanged($event)"
+    (onRowClick)="rowClick.emit()"
+    (onOptionChanged)="onFocusedRowOptionChange($event)"
+    (onContentReady)="updateFocusedRowOnContentReady($event)"
+>
+    <dxo-paging
+        [pageSize]="25"
+    ></dxo-paging>
+    <dxo-pager
+        [showInfo]="true"
+        [visible]="true"
+        [showNavigationButtons]="true"
+    ></dxo-pager>
+    <dxo-header-filter
+        [visible]="true"
+    ></dxo-header-filter>
+
+    <dxi-column
+        dataField="id"
+        sortOrder="desc"
+        [visible]="false"
+    >
+    </dxi-column>
+
+    <dxi-column
+        dataField="title"
+        [allowHeaderFiltering]="false"
+        [allowHiding]="false"
+    ></dxi-column>
+
+    <dxi-column
+        dataField="ticketStatusId"
+        caption="Status"
+        [width]="120"
+        [hidingPriority]="5"
+    >
+        <dxo-lookup
+            [dataSource]="ticketStatus$ | async"
+            displayExpr="name"
+            valueExpr="id"
+        ></dxo-lookup>
+    </dxi-column>
+
+    <dxi-column
+        dataField="assigneeId"
+        caption="Assignee"
+        [width]="150"
+        [hidingPriority]="4"
+    >
+        <dxo-lookup
+            [dataSource]="users"
+            displayExpr="name"
+            valueExpr="id"
+        ></dxo-lookup>
+    </dxi-column>
+
+    <dxi-column
+        dataField="creatorId"
+        caption="Creator"
+        [width]="150"
+        [hidingPriority]="3"
+    >
+        <dxo-lookup
+            [dataSource]="users"
+            displayExpr="name"
+            valueExpr="id"
+        ></dxo-lookup>
+    </dxi-column>
+
+    <dxi-column
+        dataField="modifiedById"
+        caption="Modified By"
+        [width]="150"
+        [hidingPriority]="2"
+    >
+        <dxo-lookup
+            [dataSource]="users"
+            displayExpr="name"
+            valueExpr="id"
+        ></dxo-lookup>
+    </dxi-column>
+
+    <dxi-column
+        dataField="createdAt"
+        caption="Created"
+        dataType="date"
+        [width]="120"
+        [hidingPriority]="1"
+        [allowHeaderFiltering]="false"
+    >
+        <dxo-format
+            [formatter]="dateFormatter"
+        ></dxo-format>
+    </dxi-column>
+
+    <dxi-column
+        dataField="updatedAt"
+        caption="Updated"
+        dataType="date"
+        [width]="120"
+        [hidingPriority]="0"
+        [allowHeaderFiltering]="false"
+    >
+        <dxo-format
+            [formatter]="dateFormatter"
+        ></dxo-format>
+    </dxi-column>
+</dx-data-grid>

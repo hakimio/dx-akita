@@ -1,1 +1,122 @@
-/* You can add global styles to this file, and also import other style files */
+@import './dxa-styles';
+@import './themes/generated/variables.base';
+
+.dx-datagrid-header-panel {
+    padding: 0 5px 0 0;
+
+    .dx-toolbar-items-container {
+        height: 70px;
+    }
+}
+
+.dx-datagrid-search-panel {
+    margin-left: 0;
+}
+
+@keyframes dx-datagrid-highlight-change {
+    from {
+        background-color: #efefef;
+    }
+    50% {
+        background-color: #efefef;
+    }
+}
+
+@keyframes dx-datagrid-highlight-change-focused {
+    from {
+        background-color: scale-color($base-accent, $lightness: 10%);
+    }
+    50% {
+        background-color: scale-color($base-accent, $lightness: 10%);
+    }
+}
+
+.dx-datagrid-cell-updated-animation {
+    animation: dx-datagrid-highlight-change 1s;
+}
+
+.dx-row-focused .dx-datagrid-cell-updated-animation {
+    animation: dx-datagrid-highlight-change-focused 1s;
+}
+
+.dx-button .dx-icon {
+    color: $icon-color;
+}
+
+.material-icons {
+    transform: rotate(0.03deg);
+    color: $icon-color;
+
+    &.article:before {
+        content: 'article';
+    }
+}
+
+/*
+ * Following fixes DevEtreme nested drawer positioning when the two drawers have different position configs and opened
+ * state mode is set to "overlap"
+ * More info: https://www.devexpress.com/Support/Center/Question/Details/T850620
+ */
+.dx-drawer-right > .dx-drawer-wrapper > .dx-drawer-panel-content {
+    left: unset;
+}
+
+.dx-drawer-left > .dx-drawer-wrapper > .dx-drawer-panel-content {
+    right: unset;
+}
+
+.dx-toolbar .dx-toolbar-items-container, .dx-swatch-additional .dx-toolbar .dx-toolbar-items-container {
+    height: $toolbar-height;
+}
+
+.dxa-toolbar {
+    padding: 0 20px !important;
+    border-bottom: 1px solid $base-border-color;
+}
+
+/*
+ * Following fixes drop-down button when it has an icon, no text and both "showArrowIcon" and "splitButton" configs
+ * are set to "false"
+ * More info: https://www.devexpress.com/Support/Center/Question/Details/T849341
+ */
+.dx-dropdownbutton-popup-wrapper .dx-popup-content {
+    padding: 0;
+}
+
+.dx-dropdownbutton {
+    .dx-button.dx-button-has-icon:not(.dx-button-has-text) {
+        border-radius: 50%;
+    }
+}
+
+.dx-htmleditor .dx-toolbar .dx-toolbar-items-container {
+    height: 36px;
+}
+
+/* Following fixes search result highlighting inside focused data grid row */
+.dx-row-focused .dx-datagrid-search-text {
+    color: $base-accent;
+    background: $base-bg;
+}
+
+/* Since we are using DX gallery for wizard like functionality, we don't want text to be centered */
+.dx-gallery-item {
+    text-align: left;
+}
+
+.dx-tabpanel .dx-tabs {
+    border-bottom: 1px solid $base-border-color;
+}
+
+.dx-tab {
+    min-width: 56px;
+}
+
+/* Workaround for DX drawer bug: https://supportcenter.devexpress.com/ticket/details/t886830/ */
+.dx-drawer-shader {
+    z-index: 1500 !important;
+}
+
+.dx-drawer-panel-content.dx-overlay {
+    z-index: 1501 !important;
+}

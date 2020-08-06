@@ -1,0 +1,47 @@
+<dx-toolbar>
+    <dxi-item
+        location="before"
+        locateInMenu="auto"
+    >
+        <dx-button-group
+            stylingMode="outlined"
+            [selectedItemKeys]="['Open']"
+            (onItemClick)="filterItemClick($event)"
+        >
+            <dxi-item
+                text="All"
+            ></dxi-item>
+            <dxi-item
+                text="Pending"
+            ></dxi-item>
+            <dxi-item
+                text="Open"
+            ></dxi-item>
+            <dxi-item
+                text="Closed"
+            ></dxi-item>
+        </dx-button-group>
+    </dxi-item>
+
+    <dxi-item
+        location="center"
+        locateInMenu="auto"
+    >
+        <dxa-project-selector></dxa-project-selector>
+    </dxi-item>
+
+    <dxi-item
+        location="after"
+    >
+        <dx-button
+            text="Add Ticket"
+            stylingMode="contained"
+            type="default"
+            (onClick)="isAddPopupVisible = true"
+        ></dx-button>
+    </dxi-item>
+</dx-toolbar>
+
+<dxa-ticket-add-popup
+    [(isVisible)]="isAddPopupVisible"
+></dxa-ticket-add-popup>

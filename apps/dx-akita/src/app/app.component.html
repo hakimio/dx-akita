@@ -1,8 +1,13 @@
-<div style="text-align: center;">
-  <h1>Welcome to dx-akita!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
-</div>
-<div>Message: {{ hello$ | async | json }}</div>
+<ng-container *ngIf="isLoggedIn$ | async; else notAuthorized">
+    <dxa-navigation>
+        <div class="content-block responsive-paddings">
+            <router-outlet></router-outlet>
+        </div>
+    </dxa-navigation>
+</ng-container>
+
+<ng-template #notAuthorized>
+    <dxa-card>
+        <router-outlet></router-outlet>
+    </dxa-card>
+</ng-template>

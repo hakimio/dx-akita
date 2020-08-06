@@ -1,8 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "dxAkita", "camelCase"],
-    "component-selector": [true, "element", "dx-akita", "kebab-case"]
+    "directive-selector": [true, "attribute", "dxa", "camelCase"],
+    "component-selector": [true, "element", "dxa", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]

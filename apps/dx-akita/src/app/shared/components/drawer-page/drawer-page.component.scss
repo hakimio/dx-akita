@@ -1,0 +1,32 @@
+@import '../../../../dxa-styles';
+@import '../../../../themes/generated/variables.base';
+
+:host {
+    flex: 1;
+    min-height: 0;
+    border: 1px solid $base-border-color;
+}
+
+dx-drawer {
+    min-height: 0;
+}
+
+.side-panel, .main-content {
+    background: #fff;
+    height: 100%;
+
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-panel {
+    border-left: 1px solid $base-border-color;
+}
+
+@media (max-width: $mobile-width) {
+    .side-panel {
+        width: calc(100vw - 40px) !important;
+    }
+}

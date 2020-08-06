@@ -1,0 +1,15 @@
+<dx-popup
+    title="Add Ticket"
+    [dragEnabled]="true"
+    height="auto"
+    [width]="550"
+    [(visible)]="isVisible"
+    [fullScreen]="isFullscreen"
+    (onContentReady)="reducePopupPadding($event)"
+    (onShown)="editForm.focusFirstInput()"
+>
+    <dxa-ticket-add-edit-form
+        #editForm
+        (closed)="isVisible = false"
+    ></dxa-ticket-add-edit-form>
+</dx-popup>

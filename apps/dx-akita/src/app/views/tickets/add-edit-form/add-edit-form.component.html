@@ -1,0 +1,81 @@
+<form
+    [formGroup]="form"
+    (ngSubmit)="submitForm()"
+    #htmlFormElement
+>
+    <dxa-form-field>
+        <dx-text-box
+            formControlName="title"
+            #titleTextBox
+            [isValid]="validate(form, 'title')"
+            [validationError]="{
+                message: 'Title is required'
+            }"
+            placeholder="Title"
+            width="100%"
+        ></dx-text-box>
+    </dxa-form-field>
+    <dxa-form-field>
+        <dx-select-box
+            formControlName="assigneeId"
+            [searchEnabled]="true"
+            [searchTimeout]="100"
+            displayExpr="name"
+            valueExpr="id"
+            [items]="users$ | async"
+            placeholder="Assignee"
+            width="100%"
+        ></dx-select-box>
+    </dxa-form-field>
+    <dxa-form-field
+        class="html-editor-field"
+    >
+        <dx-html-editor
+            formControlName="description"
+            placeholder="Description"
+            width="100%"
+        >
+            <dxo-toolbar
+                [items]="['bold', 'italic', 'underline', 'separator', 'orderedList', 'bulletList', 'separator',
+                    'link', 'clear']"
+            ></dxo-toolbar>
+            <dxi-mention
+                valueExpr="id"
+                displayExpr="name"
+                [dataSource]="users$ | async"
+                searchExpr="name"
+                [searchTimeout]="100"
+            ></dxi-mention>
+        </dx-html-editor>
+    </dxa-form-field>
+</form>
+
+<dx-toolbar>
+    <dxi-item
+        location="after"
+    >
+        <dx-button
+            text="Save"
+            type="default"
+            stylingMode="text"
+            (onClick)="submitForm()"
+        ></dx-button>
+    </dxi-item>
+    <dxi-item
+        location="after"
+    >
+        <dx-button
+            text="Cancel"
+            stylingMode="text"
+            (onClick)="cancelClick()"
+        ></dx-button>
+    </dxi-item>
+</dx-toolbar>
+
+<dx-load-panel
+    [visible]="isLoading"
+>
+    <dxo-position
+        [of]="htmlFormElement"
+    ></dxo-position>
+</dx-load-panel>

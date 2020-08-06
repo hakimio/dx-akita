@@ -1,0 +1,20 @@
+<dx-drop-down-button
+    *ngIf="user$ | async as user"
+    icon="/assets/avatars/{{user.username}}.jpg"
+    [text]="user.name"
+    displayExpr="text"
+    class="user-button"
+    stylingMode="text"
+    [showArrowIcon]="false"
+    [splitButton]="false"
+>
+    <dxo-drop-down-options
+        [width]="150"
+    ></dxo-drop-down-options>
+
+    <dxi-item
+        text="Logout"
+        icon="runner"
+        [onClick]="logout"
+    ></dxi-item>
+</dx-drop-down-button>

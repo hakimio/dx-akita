@@ -1,0 +1,66 @@
+<dx-scroll-view
+    width="100%"
+    *ngIf="ticket"
+>
+    <div class="main-container">
+
+        <dxa-form-field>
+            <dxa-form-label>Title</dxa-form-label>
+            <p>{{ ticket.title }}</p>
+        </dxa-form-field>
+
+        <dxa-form-field>
+            <dxa-form-label>Status</dxa-form-label>
+            <dx-lookup
+                [items]="ticketStatus$ | async"
+                [itemCenteringEnabled]="false"
+                [usePopover]="true"
+                displayExpr="name"
+                valueExpr="id"
+                [value]="ticket.ticketStatusId"
+                [height]="22"
+                (onSelectionChanged)="updateProperty($event, 'ticketStatusId')"
+            >
+                <dxo-drop-down-options
+                    [width]="100"
+                >
+                    <dxo-position
+                        my="left top"
+                        at="left bottom"
+                    ></dxo-position>
+                </dxo-drop-down-options>
+            </dx-lookup>
+        </dxa-form-field>
+
+        <dxa-form-field>
+            <dxa-form-label>Assignee</dxa-form-label>
+            <dx-lookup
+                [items]="users$ | async"
+                [itemCenteringEnabled]="false"
+                [usePopover]="true"
+                [searchEnabled]="true"
+                [searchTimeout]="100"
+                displayExpr="name"
+                valueExpr="id"
+                placeholder="Assignee"
+                [value]="ticket.assigneeId"
+                [height]="22"
+                (onSelectionChanged)="updateProperty($event, 'assigneeId')"
+            >
+                <dxo-drop-down-options
+                    [width]="200"
+                >
+                    <dxo-position
+                        my="left top"
+                        at="left bottom"
+                    ></dxo-position>
+                </dxo-drop-down-options>
+            </dx-lookup>
+        </dxa-form-field>
+
+        <dxa-form-field>
+            <dxa-form-label>Description</dxa-form-label>
+            <div [innerHTML]="ticket.description"></div>
+        </dxa-form-field>
+    </div>
+</dx-scroll-view>

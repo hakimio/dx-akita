@@ -1,0 +1,7 @@
+:host:not(:last-of-type) {
+    margin-bottom: 30px !important;
+}
+
+:host {
+    flex-direction: column;
+}

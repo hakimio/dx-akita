@@ -1,0 +1,17 @@
+{
+    "items": [{
+        "key": "@base-accent",
+        "value": "#23AA5F"
+    }, {
+      "key": "@datagrid-row-focused-bg",
+      "value": "#23AA5F"
+    }, {
+      "key": "@tabs-tab-bg",
+      "value": "#FFF"
+    }],
+    "baseTheme": "material.teal.light",
+    "assetsBasePath": "../../../../../node_modules/devextreme/dist/css/",
+    "outputColorScheme": "base",
+    "base": true,
+    "widgets": "datagrid,form,toolbar,button,loadpanel,contextmenu,list,popup,drawer,toast,treelist,htmleditor,tagbox,lookup"
+}

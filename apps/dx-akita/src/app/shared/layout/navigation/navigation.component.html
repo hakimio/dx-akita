@@ -1,0 +1,51 @@
+<dx-drawer
+    class="drawer"
+    position="before"
+    [closeOnOutsideClick]="shaderEnabled"
+    [openedStateMode]="menuMode"
+    [revealMode]="menuRevealMode"
+    [minSize]="minMenuSize"
+    [shading]="shaderEnabled"
+    [(opened)]="menuOpened">
+
+    <dxa-navigation-menu
+        [compactMode]="!menuOpened"
+        [selectedItem]="selectedRoute$ | async"
+        class="dx-swatch-additional"
+        *dxTemplate="let data of 'panel'"
+        (selectedItemChanged)="navigationChanged($event)"
+        (openMenu)="navigationClick()">
+        <dx-toolbar id="navigation-header">
+            <dxi-item
+                *ngIf="minMenuSize !== 0"
+                location="before"
+                cssClass="menu-button"
+                widget="dxButton"
+            >
+                <dxo-options
+                    icon="menu"
+                    stylingMode="text"
+                    [onClick]="toggleMenu"
+                ></dxo-options>
+            </dxi-item>
+            <dxi-item
+                location="before"
+                class="logo"
+            >
+                <a routerLink="/">{{appName}}</a>
+            </dxi-item>
+        </dx-toolbar>
+    </dxa-navigation-menu>
+
+    <div class="container">
+        <dxa-navigation-header
+            [menuToggleEnabled]="minMenuSize === 0"
+            (menuToggle)="menuOpened = !menuOpened;"
+        >
+        </dxa-navigation-header>
+
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</dx-drawer>

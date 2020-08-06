@@ -1,0 +1,41 @@
+@import '../../../../dxa-styles';
+
+:host {
+    flex: 0 0 auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: block;
+    //elements with position set stack on top of elements w/o position - https://coder-coder.com/z-index-isnt-working/
+    position: relative;
+    z-index: 1;
+
+    ::ng-deep {
+        .dx-toolbar {
+
+            &.header-toolbar .dx-toolbar-items-container .dx-toolbar-after {
+                padding: 0 40px;
+
+                @media (max-width: $mobile-width) {
+                    & {
+                        padding: 0 20px;
+                    }
+                }
+            }
+
+            .dx-toolbar-item.menu-button {
+                width: $side-panel-min-width;
+                text-align: center;
+                padding: 0;
+            }
+        }
+
+        .header-title .dx-item-content {
+            padding: 0;
+            margin: 0;
+
+            @media (min-width: $tablet-width + 1) {
+                padding-left: 20px;
+            }
+        }
+    }
+
+}

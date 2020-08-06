@@ -1,0 +1,35 @@
+{
+    "applicationEngine": "angular",
+    "build": {
+        "commands": [
+            {
+                "command": "build-theme",
+                "options": {
+                    "inputFile": "apps/dx-akita/src/themes/metadata.base.json",
+                    "outputFile": "apps/dx-akita/src/themes/generated/theme.base.css"
+                }
+            },
+            {
+                "command": "build-theme",
+                "options": {
+                    "inputFile": "apps/dx-akita/src/themes/metadata.additional.json",
+                    "outputFile": "apps/dx-akita/src/themes/generated/theme.additional.css"
+                }
+            },
+            {
+                "command": "export-theme-vars",
+                "options": {
+                    "inputFile": "apps/dx-akita/src/themes/metadata.base.json",
+                    "outputFile": "apps/dx-akita/src/themes/generated/variables.base.scss"
+                }
+            },
+            {
+                "command": "export-theme-vars",
+                "options": {
+                    "inputFile": "apps/dx-akita/src/themes/metadata.additional.json",
+                    "outputFile": "apps/dx-akita/src/themes/generated/variables.additional.scss"
+                }
+            }
+        ]
+    }
+}

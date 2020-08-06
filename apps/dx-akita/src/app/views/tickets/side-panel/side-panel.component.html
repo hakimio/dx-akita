@@ -1,0 +1,25 @@
+<dx-gallery
+    [loop]="false"
+    [showIndicator]="false"
+    [showNavButtons]="false"
+    [swipeEnabled]="false"
+    height="100%"
+>
+    <dxi-item>
+        <div class="main-view">
+            <dxa-ticket-side-panel-toolbar
+                [ticket]="focusedTicket"
+                (editClick)="openEdit()"
+            ></dxa-ticket-side-panel-toolbar>
+            <dxa-ticket-side-panel-main-view
+                [ticket]="focusedTicket"
+            ></dxa-ticket-side-panel-main-view>
+        </div>
+    </dxi-item>
+    <dxi-item>
+        <dxa-ticket-add-edit-form
+            [ticket]="focusedTicket"
+            (closed)="closeEdit()"
+        ></dxa-ticket-add-edit-form>
+    </dxi-item>
+</dx-gallery>

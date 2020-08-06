@@ -1,0 +1,29 @@
+<header>
+    <dx-toolbar
+        class="header-toolbar"
+    >
+        <dxi-item
+            *ngIf="menuToggleEnabled"
+            location="before"
+            widget="dxButton"
+            cssClass="menu-button"
+        >
+            <dxo-options
+                icon="menu"
+                stylingMode="text"
+                [onClick]="emitMenuToggle"
+            ></dxo-options>
+        </dxi-item>
+        <dxi-item
+            location="before"
+            cssClass="header-title"
+            [text]="title$ | async">
+        </dxi-item>
+
+        <dxi-item
+            location="after"
+        >
+            <dxa-user-panel *dxTemplate></dxa-user-panel>
+        </dxi-item>
+    </dx-toolbar>
+</header>

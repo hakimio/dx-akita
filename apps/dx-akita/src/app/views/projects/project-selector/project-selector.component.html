@@ -1,0 +1,8 @@
+<div class="dx-field-label">Project</div>
+<dx-select-box
+    [items]="projects$ | async"
+    [value]="selectedProjectId$ | async"
+    (onValueChanged)="valueChanged($event)"
+    displayExpr="name"
+    valueExpr="id"
+></dx-select-box>

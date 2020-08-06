@@ -6,11 +6,14 @@
       "schematics": {
         "@nrwl/angular:component": {
           "style": "scss"
+        },
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       },
       "root": "apps/dx-akita",
       "sourceRoot": "apps/dx-akita/src",
-      "prefix": "dx-akita",
+      "prefix": "dxa",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,7 +28,15 @@
               "apps/dx-akita/src/favicon.ico",
               "apps/dx-akita/src/assets"
             ],
-            "styles": ["apps/dx-akita/src/styles.scss"],
+            "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "apps/dx-akita/src/themes/generated/theme.base.css",
+              "apps/dx-akita/src/themes/generated/theme.additional.css",
+              "apps/dx-akita/src/themes/label-animations.scss",
+              "apps/dx-akita/src/dxa-styles.scss",
+              "apps/dx-akita/src/dx-styles.scss",
+              "apps/dx-akita/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,7 +95,10 @@
               "apps/dx-akita/tsconfig.app.json",
               "apps/dx-akita/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/dx-akita/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/dx-akita/**"
+            ]
           }
         },
         "test": {
@@ -119,8 +133,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/dx-akita-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/dx-akita-e2e/**"]
+            "tsConfig": [
+              "apps/dx-akita-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/dx-akita-e2e/**"
+            ]
           }
         }
       }
@@ -138,7 +157,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "showCircularDependencies": false
           },
           "configurations": {
             "production": {
@@ -167,7 +186,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**"
+            ]
           }
         },
         "test": {
@@ -179,36 +201,10 @@
           }
         }
       }
-    },
-    "api-interfaces": {
-      "root": "libs/api-interfaces",
-      "sourceRoot": "libs/api-interfaces/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api-interfaces/tsconfig.lib.json",
-              "libs/api-interfaces/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api-interfaces/jest.config.js",
-            "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@datorama/akita"
   },
   "schematics": {
     "@nrwl/angular:application": {

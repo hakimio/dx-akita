@@ -1,0 +1,22 @@
+<dxa-ticket-main-toolbar></dxa-ticket-main-toolbar>
+<dxa-drawer-page
+    [(menuOpened)]="isDrawerOpen"
+    drawerTitle="Ticket Details"
+>
+
+    <dxa-drawer-page-main-content>
+        <dxa-ticket-data-grid-toolbar
+            (menuBtnClick)="isDrawerOpen = !isDrawerOpen"
+        ></dxa-ticket-data-grid-toolbar>
+        <dxa-ticket-data-grid
+            [ticketDS]="ticketDS"
+            (rowClick)="showSidePanel()"
+        ></dxa-ticket-data-grid>
+    </dxa-drawer-page-main-content>
+
+    <dxa-drawer-page-side-panel>
+        <!-- *dxTemplate directive is needed to fix disappearing DX components when browser window is resized -->
+        <dxa-ticket-side-panel *dxTemplate></dxa-ticket-side-panel>
+    </dxa-drawer-page-side-panel>
+
+</dxa-drawer-page>

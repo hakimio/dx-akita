@@ -1,0 +1,14 @@
+:host::ng-deep .user-button {
+
+    .dx-button-has-text:not(.dx-button-back) {
+        img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+
+    .dx-button-text {
+        text-transform: none;
+    }
+
+}

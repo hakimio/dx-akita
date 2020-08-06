@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+}
+
+dx-gallery {
+    min-height: 0;
+}
+
+dxa-ticket-side-panel-main-view {
+    min-height: 0;
+}
+
+.main-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

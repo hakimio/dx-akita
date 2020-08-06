@@ -1,0 +1,13 @@
+@import '../../../themes/generated/variables.base';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+dxa-ticket-data-grid {
+    min-height: 0;
+    flex: 1;
+}

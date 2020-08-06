@@ -1,0 +1,72 @@
+<div id="loginContainer">
+    <div class="login-header">
+        <div class="title">
+            {{ appName }}
+        </div>
+        <div>Sign In to your account</div>
+    </div>
+
+    <form
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
+        (keyup.enter)="login()"
+    >
+        <dxa-form-field>
+            <dx-text-box
+                formControlName="username"
+                [isValid]="validate(loginForm, 'username')"
+                [validationError]="{
+                    message: 'Username is required'
+                }"
+                placeholder="Username"
+                width="100%"
+            ></dx-text-box>
+        </dxa-form-field>
+        <dxa-form-field>
+            <dx-text-box
+                #passwordTxtBox
+                formControlName="password"
+                [isValid]="validate(loginForm, 'password')"
+                [validationError]="{
+                    message: 'Password is required'
+                }"
+                placeholder="Password"
+                width="100%"
+                mode="password"
+            ></dx-text-box>
+        </dxa-form-field>
+        <dxa-form-field
+            class="submit-btn"
+        >
+            <dx-button
+                text="Log In"
+                type="default"
+                width="100%"
+                (onClick)="login()"
+            ></dx-button>
+        </dxa-form-field>
+        <dxa-form-field>
+            <div class="or-separator-container">
+                <div class="or-seperator">OR</div>
+            </div>
+        </dxa-form-field>
+        <dxa-form-field
+            class="google-btn"
+        >
+            <dx-button
+                text="Continue with Google"
+                type="default"
+                width="100%"
+                (onClick)="continueWithGoogle()"
+            ></dx-button>
+        </dxa-form-field>
+    </form>
+</div>
+
+<dx-load-panel
+    [visible]="isLoading$ | async"
+>
+    <dxo-position
+        of="#loginContainer"
+    ></dxo-position>
+</dx-load-panel>

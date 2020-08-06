@@ -28,9 +28,6 @@
     },
     "api": {
       "tags": []
-    },
-    "api-interfaces": {
-      "tags": []
     }
   }
 }

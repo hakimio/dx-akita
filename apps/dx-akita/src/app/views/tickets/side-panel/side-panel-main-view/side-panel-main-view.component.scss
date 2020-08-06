@@ -1,0 +1,68 @@
+@import '../../../../../themes/generated/variables.base';
+
+@mixin transition-to-darker-color {
+    color: scale-color($base-accent, $lightness: -20%);
+    transition: 0.2s ease all;
+}
+
+.main-container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+:host::ng-deep {
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    p:first-of-type {
+        margin-top: 7px;
+    }
+
+    p {
+        line-height: 1.4;
+        font-size: 15px;
+        white-space: normal;
+    }
+
+    .dx-lookup-field-wrapper {
+        .dx-lookup-field, .dx-lookup-arrow {
+            color: $base-accent;
+            transition: color ease-in-out .2s;
+        }
+
+        &:hover {
+            .dx-lookup-field, .dx-lookup-arrow {
+                color: scale-color($base-accent, $lightness: -20%);
+            }
+        }
+
+        .dx-lookup-field {
+            font-size: 15px;
+            padding: 0 20px 0 0;
+        }
+
+        .dx-lookup-arrow {
+            font: 20px/20px DXIcons;
+            width: 20px;
+        }
+    }
+}
+
+dxa-form-field:not(:last-of-type) {
+    margin-bottom: 20px !important;
+}
+
+dx-lookup {
+    align-self: start;
+    margin-top: 7px;
+
+    &:before {
+        content: unset;
+    }
+
+    &:after {
+        content: unset;
+    }
+}

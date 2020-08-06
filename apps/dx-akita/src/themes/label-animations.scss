@@ -1,0 +1,30 @@
+@import './generated/variables.base';
+
+$placeholder-margin: 1.1em;
+
+@mixin move-placeholder {
+    transform: translateY(-$placeholder-margin) scale(0.75);
+}
+
+.material-placeholder {
+    .dx-texteditor-container {
+        border-top: $placeholder-margin solid transparent;
+        overflow: initial;
+    }
+
+    .dx-placeholder {
+        transform-origin: top left;
+        transition: transform .4s cubic-bezier(.25,.8,.25,1),color .4s cubic-bezier(.25,.8,.25,1);
+
+        &.dx-state-invisible {
+            display: initial !important;
+            @include move-placeholder;
+        }
+    }
+
+    .dx-texteditor.dx-state-focused .dx-placeholder,
+    .dx-texteditor.dx-state-active .dx-placeholder {
+        @include move-placeholder;
+        color: $base-accent;
+    }
+}

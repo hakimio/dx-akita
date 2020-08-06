@@ -1,0 +1,24 @@
+<dx-toolbar
+    class="dxa-toolbar"
+>
+    <dxi-item
+        location="before"
+    >
+        <dx-button
+            text="Edit"
+            stylingMode="text"
+            [disabled]="!ticket"
+            (onClick)="editClick.emit()"
+        ></dx-button>
+    </dxi-item>
+    <dxi-item
+        location="before"
+    >
+        <dx-button
+            text="Delete"
+            stylingMode="text"
+            [disabled]="!ticket"
+            (onClick)="deleteClick()"
+        ></dx-button>
+    </dxi-item>
+</dx-toolbar>

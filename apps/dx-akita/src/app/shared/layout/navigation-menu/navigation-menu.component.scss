@@ -1,0 +1,83 @@
+@import '../../../../dxa-styles';
+
+$selected-item-background-color: rgba(110, 110, 128, .3);
+
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 250px !important;
+
+    .menu-container {
+        display: flex;
+        flex: 1;
+        // Following is needed to fix menu scrolling
+        // More info: https://stackoverflow.com/a/36247448/3529279
+        min-height: 0;
+
+        ::ng-deep .dx-treeview {
+
+            // Long text positioning
+            white-space: nowrap;
+
+            // Icon width customization
+            .dx-treeview-item {
+                padding-left: 0;
+                padding-right: 0;
+
+                .dx-icon {
+                    width: $side-panel-min-width !important;
+                    color: $base-text-color;
+                    margin: 0 !important;
+                }
+            }
+
+            .dx-treeview-toggle-item-visibility {
+                right: 10px;
+                left: auto;
+            }
+
+            .dx-rtl .dx-treeview-toggle-item-visibility {
+                left: 10px;
+                right: auto;
+            }
+
+            .dx-treeview-node {
+                // Arrow customization
+                padding: 0 0 !important;
+
+                // Item levels customization
+                &[aria-level='1'] {
+                    font-weight: 500;
+                    border-bottom: 1px solid $navigation-menu-border-color;
+                    font-size: 18px;
+                }
+
+                &[aria-level='2'] .dx-treeview-item-content {
+                    font-weight: normal;
+                    padding: 0 $side-panel-min-width;
+                }
+
+                // Selected & Focuced items customization
+                &.dx-state-selected > .dx-treeview-item:not(.dx-state-hover) {
+                    background-color: $selected-item-background-color;
+                }
+
+                &.dx-state-selected > .dx-treeview-item * {
+                    color: $base-accent;
+                }
+
+                & > .dx-treeview-item.dx-state-hover {
+                    background-color: lighten($selected-item-background-color, 10%);
+                }
+
+                .dx-treeview-item-content {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+        }
+    }
+}

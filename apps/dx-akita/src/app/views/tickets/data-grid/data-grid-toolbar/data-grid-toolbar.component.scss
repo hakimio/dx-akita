@@ -1,0 +1,13 @@
+@import '../../../../../dxa-styles';
+@import '../../../../../themes/generated/variables.base';
+
+/*dx-toolbar {
+    border-bottom: 1px solid $base-border-color;
+    padding: 0 20px !important;
+}*/
+
+@media (max-width: $tablet-width) {
+    .menu-button {
+        display: none;
+    }
+}
