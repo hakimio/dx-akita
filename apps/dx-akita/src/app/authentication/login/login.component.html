@@ -1,4 +1,4 @@
-<div id="loginContainer">
+<div #loginContainer>
     <div class="login-header">
         <div class="title">
             {{ appName }}
@@ -67,6 +67,6 @@
     [visible]="isLoading$ | async"
 >
     <dxo-position
-        of="#loginContainer"
+        [of]="loginContainer"
     ></dxo-position>
 </dx-load-panel>
