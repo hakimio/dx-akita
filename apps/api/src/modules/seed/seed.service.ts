@@ -5,7 +5,7 @@ import {PredictableRandomizer} from '../../utils/predictable-randomizer';
 import {StringUtils} from '../../utils/string-utils';
 import {AuthUtils} from '../../utils/auth-utils';
 import * as dayjs from 'dayjs';
-import klona = require('klona');
+import {klona} from 'klona/lite';
 
 @Injectable()
 export class SeedService {

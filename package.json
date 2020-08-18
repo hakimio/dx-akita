@@ -73,7 +73,7 @@
     "devextreme-angular": "^20.1.4",
     "fastify-url-data": "^2.4.0",
     "helpful-decorators": "^2.0.6",
-    "klona": "^1.1.2",
+    "klona": "^2.0.2",
     "mysql": "^2.18.1",
     "ngx-quicklink": "^0.2.3",
     "passport": "^0.4.1",

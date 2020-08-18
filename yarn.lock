@@ -9591,10 +9591,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-klona@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/klona/-/klona-1.1.2.tgz#a79e292518a5a5412ec8d097964bff1571a64db0"
-  integrity sha512-xf88rTeHiXk+XE2Vhi6yj8Wm3gMZrygGdKjJqN8HkV+PwF/t50/LdAKHoHpPcxFAlmQszTZ1CugrK25S7qDRLA==
+klona@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.2.tgz#915044c0751e9fd503376c12343fe81d8f32b93c"
+  integrity sha512-SAJaH71R/V9+aQaUi0le3ouvAJP9ifSf6pGrbJJf5w+vwc7EHmaxBl43YO1Lv15BZHtfI03X7i20QLb87Hne4g==
 
 latest-version@^3.0.0:
   version "3.1.0"
