@@ -13,7 +13,7 @@
             <dxa-form-label>Status</dxa-form-label>
             <dx-lookup
                 [items]="ticketStatus$ | async"
-                [itemCenteringEnabled]="false"
+                [dropDownCentered]="false"
                 [usePopover]="true"
                 displayExpr="name"
                 valueExpr="id"
@@ -23,12 +23,7 @@
             >
                 <dxo-drop-down-options
                     [width]="100"
-                >
-                    <dxo-position
-                        my="left top"
-                        at="left bottom"
-                    ></dxo-position>
-                </dxo-drop-down-options>
+                ></dxo-drop-down-options>
             </dx-lookup>
         </dxa-form-field>
 
@@ -36,7 +31,7 @@
             <dxa-form-label>Assignee</dxa-form-label>
             <dx-lookup
                 [items]="users$ | async"
-                [itemCenteringEnabled]="false"
+                [dropDownCentered]="false"
                 [usePopover]="true"
                 [searchEnabled]="true"
                 [searchTimeout]="100"
@@ -49,12 +44,7 @@
             >
                 <dxo-drop-down-options
                     [width]="200"
-                >
-                    <dxo-position
-                        my="left top"
-                        at="left bottom"
-                    ></dxo-position>
-                </dxo-drop-down-options>
+                ></dxo-drop-down-options>
             </dx-lookup>
         </dxa-form-field>
 

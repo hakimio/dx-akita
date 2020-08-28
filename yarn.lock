@@ -5933,20 +5933,20 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
-devexpress-diagram@1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/devexpress-diagram/-/devexpress-diagram-1.0.9.tgz#ff5e31787e4aff1777fa3b9c0231a1ca794b7dc2"
-  integrity sha512-68xywzFXGyUw0dhnRsH1Ya0aLIn418qi1iJkfotlF70LduoI+rCm3bX2BylW9lPredB+PKCfV9Ohpn9/hmSQSA==
+devexpress-diagram@1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/devexpress-diagram/-/devexpress-diagram-1.0.14.tgz#756874d5391014070f28681f116cff8cafbf9996"
+  integrity sha512-C4Hr5YkKoBDXLRXgTewpIhEoMn5pG4eirrJUM8XVvnFWcNIXC75dZgf1V+ohfR5gEC8MukD/v75HrBwB3YaQIQ==
 
 devexpress-gantt@1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/devexpress-gantt/-/devexpress-gantt-1.0.7.tgz#4d2102d5a084b5ba70c88b0c0d6f236b6d784e0b"
   integrity sha512-hApkfj778bu/g0P2cWkNmki7ZCUlIkuIZyRpcNN0Ht8De/lpW2R3xVvXixZw5ZVA8cXIiJ90Jb8pcCoJTkJ+Tg==
 
-devextreme-angular@^20.1.6:
-  version "20.1.6"
-  resolved "https://registry.yarnpkg.com/devextreme-angular/-/devextreme-angular-20.1.6.tgz#56c56f837e33ee0800fa207bdaa65b055eaeb84f"
-  integrity sha512-4tJsAX0gvsTPNaR91lqJ0HJ77yqjZboXa132DHOt99s8JeBGUmPZhNPafj1PEXwH2eL4tiJ5yV62d0HPWicgbA==
+devextreme-angular@^20.1.7:
+  version "20.1.7"
+  resolved "https://registry.yarnpkg.com/devextreme-angular/-/devextreme-angular-20.1.7.tgz#a0890f05994cefffe27c96b9eeee570193e7e33a"
+  integrity sha512-Cazxm/179htBz9Ztr8UqY0cSx7LDdgF95eB98UtleGhPNlcPT3oM103dy0GlKooCckgad+zu/x1Q9ZGlXd2fvw==
   dependencies:
     "@angular-devkit/schematics" "^7.2.2"
     devextreme-schematics latest
@@ -5978,12 +5978,12 @@ devextreme-schematics@latest:
     rxjs "~6.4.0"
     typescript "3.5.3"
 
-devextreme@^20.1.6:
-  version "20.1.6"
-  resolved "https://registry.yarnpkg.com/devextreme/-/devextreme-20.1.6.tgz#08055960f35872c37ca5c3a9a7272b0e4bfd94a7"
-  integrity sha512-SsSer6LqxYR//nwDz7Jt67q8YKjWHYfJOwEOqbk3RL3qbJgLUFbE4mztEPO63pORzWzY9TNHNEv4FEIAxnbfNg==
+devextreme@^20.1.7:
+  version "20.1.7"
+  resolved "https://registry.yarnpkg.com/devextreme/-/devextreme-20.1.7.tgz#14e7272a38b2a326590fcc17cc69785f6fb5ac79"
+  integrity sha512-YcarmA3EMP/l2dw7sxGAizFMD2XV6aXIu8ZJb8Lq7Ed1Dj/Rmgr0rEhMqwR1vxq7IeIW83U9mxF2eWVR5INNVQ==
   dependencies:
-    devexpress-diagram "1.0.9"
+    devexpress-diagram "1.0.14"
     devexpress-gantt "1.0.7"
     jszip "^2.0.0 || ^3.0.0"
     quill "^1.3.7"
