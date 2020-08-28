@@ -13,9 +13,8 @@ export class SanitizeHtmlTransformer implements ValueTransformer {
         }
 
         return sanitizeHtml(value, {
-            allowedTags: ['p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'br', 'span', 'u'],
+            allowedTags: ['p', 'ul', 'ol', 'li', 'strong', 'em', 'br', 'span', 'u'],
             allowedAttributes: {
-                a: ['href', 'target', 'rel'],
                 span: ['class', 'spellcheck', 'data-marker', 'data-mention-value', 'data-id', 'contenteditable']
             },
             allowedSchemes: ['http', 'https'],
