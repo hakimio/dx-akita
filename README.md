@@ -29,6 +29,9 @@ yarn start:frontend
 ```
 - Open [localhost:4200](http://localhost:4200) in your browser and login with user `don`, password `admin`
 
+## Entity Relationship Diagram
+![Entity Relationship Diagram](https://user-images.githubusercontent.com/768105/96582167-2dc5af00-12db-11eb-9abc-308f0a5b7b5b.png)
+
 ## License
 
 MIT
