@@ -4,6 +4,8 @@
 and [Akita](https://datorama.github.io/akita/) can be used together. It's an unofficial project and the author is not 
 affiliated with "DevExpress" or "Datorama" in any way.
 
+![Ticket App](https://user-images.githubusercontent.com/768105/96586185-ee01c600-12e0-11eb-97c8-a5137473ca89.png)
+
 ## Features shown in the demo
 
 - State management with Akita
