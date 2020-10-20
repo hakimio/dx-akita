@@ -1,84 +1,34 @@
-# DxAkita
+# DevExtreme Akita
 
-This project was generated using [Nx](https://nx.dev).
+"DevExtreme Akita" is a demo project meant to show how [DevExtreme Angular](https://js.devexpress.com/Overview/Angular/) 
+and [Akita](https://datorama.github.io/akita/) can be used together. It's an unofficial project and the author is not 
+affiliated with "DevExpress" or "Datorama" in any way.
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+## Features shown in the demo
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+- State management with Akita
+- Responsive UI design
+- Authentication with [JWT rotating refresh token](https://auth0.com/blog/securing-single-page-applications-with-refresh-token-rotation/#Introducing-Refresh-Token-Rotation)
 
-## Quick Start & Documentation
+## Running the demo locally
+ 
+- Install dependencies
+```bash
+yarn install
+```
+- Copy `/apps/api/src/environments/environment.example.ts` to `environment.ts`
+- Open `environment.ts` and update options in `typeOrm`  and `JWT` sections
+- Import [MySQL dump](https://github.com/hakimio/dx-akita/files/5408162/ticket_app.zip) to your local MySQL database
+- Start the backend:
+```bash
+yarn start:backend
+```
+- Start the frontend:
+```bash
+yarn start:frontend
+```
+- Open [localhost:4200](http://localhost:4200) in your browser and login with user `don`, password `admin`
 
-[Nx Documentation](https://nx.dev/angular)
+## License
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
-
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
-
-## Adding capabilities to your workspace
-
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are some plugins which you can add to your workspace:
-
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-## Generate an application
-
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are sharable across libraries and applications. They can be imported from `@dx-akita/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+MIT
