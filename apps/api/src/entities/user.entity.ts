@@ -101,9 +101,8 @@ export class User {
     @IsOptional({always: true})
     @ValidateNested({ always: true, each: true })
     @Type(() => Comment)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Comment,
-        required: false,
         isArray: true
     })
     comments: Comment[];
@@ -113,9 +112,8 @@ export class User {
         (ticket) => ticket.creator
     )
     @Type(() => Ticket)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Ticket,
-        required: false,
         isArray: true
     })
     ticketsCreated: Ticket[];
@@ -125,9 +123,8 @@ export class User {
         (ticket) => ticket.assignee
     )
     @Type(() => Ticket)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Ticket,
-        required: false,
         isArray: true
     })
     ticketsAssigned: Ticket[];
@@ -137,9 +134,8 @@ export class User {
         (ticket) => ticket.modifiedBy
     )
     @Type(() => Ticket)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Ticket,
-        required: false,
         isArray: true
     })
     ticketsModified: Ticket[];
@@ -149,9 +145,8 @@ export class User {
         (projectUser) => projectUser.user
     )
     @Type(() => ProjectUser)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => ProjectUser,
-        required: false,
         isArray: true
     })
     projectUsers: ProjectUser[];
@@ -161,9 +156,8 @@ export class User {
         (project) => project.users
     )
     @Type(() => Project)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Project,
-        required: false,
         isArray: true
     })
     projects: Project[];

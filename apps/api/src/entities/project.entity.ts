@@ -48,9 +48,7 @@ export class Project {
     }, {
         always: true
     })
-    @ApiProperty({
-        required: false
-    })
+    @ApiPropertyOptional()
     leadId: number | null;
 
     @ManyToOne(
@@ -65,10 +63,7 @@ export class Project {
         referencedColumnName: 'id'
     }])
     @Type(() => User)
-    @ApiProperty({
-        type: () => User,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => User})
     lead: User;
 
     @OneToMany(
@@ -77,9 +72,8 @@ export class Project {
     )
     @IsOptional({always: true})
     @Type(() => ProjectUser)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => ProjectUser,
-        required: false,
         isArray: true
     })
     projectUsers: ProjectUser[];
@@ -90,9 +84,8 @@ export class Project {
     )
     @IsOptional({always: true})
     @Type(() => Ticket)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Ticket,
-        required: false,
         isArray: true
     })
     tickets: Ticket[];
@@ -113,9 +106,8 @@ export class Project {
         }
     })
     @Type(() => User)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => User,
-        required: false,
         isArray: true
     })
     users: User[];

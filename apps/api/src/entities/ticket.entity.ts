@@ -142,10 +142,7 @@ export class Ticket {
         referencedColumnName: 'id'
     }])
     @Type(() => Project)
-    @ApiProperty({
-        type: () => Project,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => Project})
     project: Project;
 
     @ManyToOne(
@@ -160,10 +157,7 @@ export class Ticket {
         referencedColumnName: 'id'
     }])
     @Type(() => TicketStatus)
-    @ApiProperty({
-        type: () => TicketStatus,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => TicketStatus})
     ticketStatus: TicketStatus;
 
     @OneToMany(
@@ -175,7 +169,6 @@ export class Ticket {
     @Type(() => Comment)
     @ApiProperty({
         type: () => Comment,
-        required: false,
         isArray: true
     })
     comments: Comment[];
@@ -192,10 +185,7 @@ export class Ticket {
         referencedColumnName: 'id'
     }])
     @Type(() => User)
-    @ApiProperty({
-        type: () => User,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => User})
     creator: User;
 
     @ManyToOne(
@@ -210,10 +200,7 @@ export class Ticket {
         referencedColumnName: 'id'
     }])
     @Type(() => User)
-    @ApiProperty({
-        type: () => User,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => User})
     assignee: User;
 
     @ManyToOne(
@@ -228,10 +215,7 @@ export class Ticket {
         referencedColumnName: 'id'
     }])
     @Type(() => User)
-    @ApiProperty({
-        type: () => User,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => User})
     modifiedBy: User;
 
 }

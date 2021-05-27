@@ -26,18 +26,14 @@ export class Comment {
         name: 'id',
         unsigned: true
     })
-    @ApiProperty({
-        required: false
-    })
+    @ApiPropertyOptional()
     id: number;
 
     @Column('int', {
         name: 'userId',
         unsigned: true
     })
-    @ApiProperty({
-        required: false
-    })
+    @ApiPropertyOptional()
     userId: number;
 
     @Column('int', {
@@ -62,6 +58,7 @@ export class Comment {
     })
     @IsNotEmpty({always: true})
     @IsString({always: true})
+    @ApiProperty()
     content: string;
 
     @Column({
@@ -69,9 +66,7 @@ export class Comment {
         default: () => 'CURRENT_TIMESTAMP',
         name: 'createdAt'
     })
-    @ApiProperty({
-        required: false
-    })
+    @ApiPropertyOptional()
     createdAt: Date;
 
     @Column({
@@ -80,9 +75,7 @@ export class Comment {
         onUpdate: 'CURRENT_TIMESTAMP',
         name: 'updatedAt'
     })
-    @ApiProperty({
-        required: false
-    })
+    @ApiPropertyOptional()
     updatedAt: Date;
 
     @ManyToOne(
@@ -97,10 +90,7 @@ export class Comment {
         referencedColumnName: 'id'
     }])
     @Type(() => User)
-    @ApiProperty({
-        type: () => User,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => User})
     user: User;
 
     @ManyToOne(
@@ -115,10 +105,7 @@ export class Comment {
         referencedColumnName: 'id'
     }])
     @Type(() => Ticket)
-    @ApiProperty({
-        type: () => Ticket,
-        required: false
-    })
+    @ApiPropertyOptional({type: () => Ticket})
     ticket: Ticket;
 
 }

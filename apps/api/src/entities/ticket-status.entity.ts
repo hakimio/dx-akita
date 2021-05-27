@@ -30,9 +30,8 @@ export class TicketStatus {
     )
     @IsOptional({always: true})
     @Type(() => Ticket)
-    @ApiProperty({
+    @ApiPropertyOptional({
         type: () => Ticket,
-        required: false,
         isArray: true
     })
     tickets: Ticket[];
