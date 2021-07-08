@@ -21,6 +21,10 @@ yarn install
 - Copy `/apps/api/src/environments/environment.example.ts` to `environment.ts`
 - Open `environment.ts` and update options in `typeOrm`  and `JWT` sections
 - Import [MySQL dump](https://github.com/hakimio/dx-akita/files/5408162/ticket_app.zip) to your local MySQL database
+- Build frontend theme:
+```bash
+yarn build:themes
+```
 - Start the backend:
 ```bash
 yarn start:backend
