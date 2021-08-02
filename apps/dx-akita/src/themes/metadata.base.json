@@ -13,5 +13,5 @@
     "assetsBasePath": "../../../../../node_modules/devextreme/dist/css/",
     "outputColorScheme": "base",
     "base": true,
-    "widgets": "datagrid,form,toolbar,button,loadpanel,contextmenu,list,popup,drawer,toast,treelist,htmleditor,tagbox,lookup"
+    "widgets": "datagrid,toolbar,button,loadpanel,contextmenu,list,popup,drawer,toast,htmleditor,tagbox,lookup,gallery,buttongroup,dropdownbutton,textbox,selectbox,scrollview"
 }

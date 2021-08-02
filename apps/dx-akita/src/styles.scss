@@ -52,19 +52,6 @@
     }
 }
 
-/*
- * Following fixes DevEtreme nested drawer positioning when the two drawers have different position configs and opened
- * state mode is set to "overlap"
- * More info: https://www.devexpress.com/Support/Center/Question/Details/T850620
- */
-.dx-drawer-right > .dx-drawer-wrapper > .dx-drawer-panel-content {
-    left: unset;
-}
-
-.dx-drawer-left > .dx-drawer-wrapper > .dx-drawer-panel-content {
-    right: unset;
-}
-
 .dx-toolbar .dx-toolbar-items-container, .dx-swatch-additional .dx-toolbar .dx-toolbar-items-container {
     height: $toolbar-height;
 }
